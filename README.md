@@ -1,4 +1,4 @@
 NetBootstrap
 ============
 
-ViewComponent factory using Twitter Bootstrap
+.NET MVC Component factory using Twitter Bootstrap
