@@ -3,6 +3,24 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetBootstrap", "NetBootstrap\NetBootstrap.csproj", "{0577273A-4ECE-44DC-A478-1810AE5865EB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bootstrap", "Bootstrap", "{5147C127-B4B7-4103-A65A-6A7D42030EB2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "css", "css", "{E1121FEB-4C51-4F65-82F3-6F7E19B5BD38}"
+	ProjectSection(SolutionItems) = preProject
+		Bootstrap\css\bootstrap-responsive.css = Bootstrap\css\bootstrap-responsive.css
+		Bootstrap\css\bootstrap.css = Bootstrap\css\bootstrap.css
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "js", "js", "{A19135EC-7C50-4684-A344-EBA1402FEE63}"
+	ProjectSection(SolutionItems) = preProject
+		Bootstrap\js\bootstrap.js = Bootstrap\js\bootstrap.js
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{A3717FE0-18CA-42E7-89F0-937BB911EB50}"
+	ProjectSection(SolutionItems) = preProject
+		Bootstrap\img\glyphicons-halflings.png = Bootstrap\img\glyphicons-halflings.png
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -16,5 +34,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E1121FEB-4C51-4F65-82F3-6F7E19B5BD38} = {5147C127-B4B7-4103-A65A-6A7D42030EB2}
+		{A19135EC-7C50-4684-A344-EBA1402FEE63} = {5147C127-B4B7-4103-A65A-6A7D42030EB2}
+		{A3717FE0-18CA-42E7-89F0-937BB911EB50} = {5147C127-B4B7-4103-A65A-6A7D42030EB2}
 	EndGlobalSection
 EndGlobal
