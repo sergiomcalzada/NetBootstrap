@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Web;
 
-namespace NetBootstrap.Bootstrap.Abstract
+namespace NetBootstrap.Bootstrap.Base
 {
     public interface IComponentBuilder<TViewComponent>
    where TViewComponent : ViewComponentBase

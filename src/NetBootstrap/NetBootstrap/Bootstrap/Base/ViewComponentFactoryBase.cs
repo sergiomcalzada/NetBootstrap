@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Web.Mvc;
 
-namespace NetBootstrap.Bootstrap.Abstract
+namespace NetBootstrap.Bootstrap.Base
 {
     public abstract class ViewComponentFactoryBase
     {
-        public ViewComponentFactoryBase(HtmlHelper helper)
+        protected ViewComponentFactoryBase(HtmlHelper helper)
         {
             HtmlHelper = helper;
         }
@@ -18,7 +15,7 @@ namespace NetBootstrap.Bootstrap.Abstract
 
     public abstract class ViewComponentFactoryBase<TModel> : ViewComponentFactoryBase
     {
-        public ViewComponentFactory(HtmlHelper helper)
+        protected ViewComponentFactoryBase(HtmlHelper helper)
             : base(helper)
         {
         }

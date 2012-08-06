@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Web;
+using System.Web.Mvc;
 
-namespace NetBootstrap.Bootstrap.Abstract
+namespace NetBootstrap.Bootstrap.Base
 {
     public abstract class ViewComponentBase
     {
