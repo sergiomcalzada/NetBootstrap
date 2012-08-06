@@ -43,9 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bootstrap\Base\ViewComponentBase.cs" />
-    <Compile Include="Bootstrap\Base\ViewComponentBuilderBase.cs" />
-    <Compile Include="Bootstrap\Base\ViewComponentFactoryBase.cs" />
+    <Compile Include="Base\ViewComponentBase.cs" />
+    <Compile Include="Base\ViewComponentBuilderBase.cs" />
+    <Compile Include="Base\ViewComponentFactoryBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\IHideObjectMembers.cs" />
   </ItemGroup>
@@ -53,6 +53,7 @@
     <Folder Include="Bootstrap\Components\" />
     <Folder Include="Bootstrap\Plugins\" />
     <Folder Include="Bootstrap\Scaffolding\" />
+    <Folder Include="Html\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

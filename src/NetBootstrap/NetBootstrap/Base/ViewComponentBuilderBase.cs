@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web;
 
-namespace NetBootstrap.Bootstrap.Base
+namespace NetBootstrap.Base
 {
     public interface IComponentBuilder<TViewComponent>
    where TViewComponent : ViewComponentBase

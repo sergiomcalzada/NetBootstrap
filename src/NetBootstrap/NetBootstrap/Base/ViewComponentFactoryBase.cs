@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace NetBootstrap.Bootstrap.Base
+namespace NetBootstrap.Base
 {
     public abstract class ViewComponentFactoryBase
     {
