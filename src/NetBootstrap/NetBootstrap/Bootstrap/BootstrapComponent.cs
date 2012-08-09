@@ -14,6 +14,8 @@ namespace NetBootstrap.Bootstrap
         {
         }
 
+        protected TagBuilder HtmlBuilder;
+
         public string Name { get; set; }
 
         public string Id

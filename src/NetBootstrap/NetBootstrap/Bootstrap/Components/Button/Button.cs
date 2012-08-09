@@ -10,7 +10,7 @@ namespace NetBootstrap.Bootstrap.Components.Button
     public class Button : BootstrapComponent
     {
 
-        private TagBuilder HtmlBuilder;
+       
 
         public Button(ViewContext context)
             : base(context)
