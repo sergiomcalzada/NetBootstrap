@@ -22,9 +22,9 @@ namespace NetBootstrap.Bootstrap.Components.Button
         public enum ButtonSize
         {
             Standar,
-            Large,      //.btn-large
-            Small,      //.btn-small
-            Mini        //.btn-mini
+            Large,      //btn-large
+            Small,      //btn-small
+            Mini        //btn-mini
 
         }
 

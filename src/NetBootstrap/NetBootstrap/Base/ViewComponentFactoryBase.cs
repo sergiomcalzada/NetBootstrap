@@ -15,7 +15,7 @@ namespace NetBootstrap.Base
 
     public abstract class ViewComponentFactoryBase<TModel> : ViewComponentFactoryBase
     {
-        protected ViewComponentFactoryBase(HtmlHelper helper)
+        protected ViewComponentFactoryBase(HtmlHelper<TModel> helper)
             : base(helper)
         {
         }
