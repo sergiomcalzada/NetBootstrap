@@ -21,7 +21,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{A3717FE0-18C
 		Bootstrap\img\glyphicons-halflings.png = Bootstrap\img\glyphicons-halflings.png
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetBootstrap.MVC", "NetBootstrap.MVC\NetBootstrap.MVC.csproj", "{70CA55E1-89F8-44BA-BF7F-FAC33BA8B1CA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetBootstrap.MVC", "NetBootstrap.MVC\NetBootstrap.MVC.csproj", "{66A67648-DE0E-4A86-BC61-C192B79A9907}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,10 +33,10 @@ Global
 		{0577273A-4ECE-44DC-A478-1810AE5865EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0577273A-4ECE-44DC-A478-1810AE5865EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0577273A-4ECE-44DC-A478-1810AE5865EB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{70CA55E1-89F8-44BA-BF7F-FAC33BA8B1CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{70CA55E1-89F8-44BA-BF7F-FAC33BA8B1CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{70CA55E1-89F8-44BA-BF7F-FAC33BA8B1CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{70CA55E1-89F8-44BA-BF7F-FAC33BA8B1CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66A67648-DE0E-4A86-BC61-C192B79A9907}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66A67648-DE0E-4A86-BC61-C192B79A9907}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66A67648-DE0E-4A86-BC61-C192B79A9907}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66A67648-DE0E-4A86-BC61-C192B79A9907}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
