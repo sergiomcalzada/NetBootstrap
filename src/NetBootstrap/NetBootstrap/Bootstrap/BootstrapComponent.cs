@@ -12,7 +12,10 @@ namespace NetBootstrap.Bootstrap
     {
         protected BootstrapComponent(ViewContext context) : base(context)
         {
+            this.Enabled = true;
+            this.Active = false;
         }
+
 
         protected TagBuilder HtmlBuilder;
 
@@ -21,6 +24,22 @@ namespace NetBootstrap.Bootstrap
         public string Id
         {
             get { return TagBuilder.CreateSanitizedId(Name); }
+        }
+
+        public bool Enabled { get; set; }
+
+        public bool Active { get; set; }
+
+
+        protected virtual void SetEnabled()
+        {
+            if (!this.Enabled )
+                HtmlBuilder.AddCssClass("disabled");
+        }
+        protected virtual void SetActive()
+        {
+            if (this.Active)
+                HtmlBuilder.AddCssClass("active");
         }
     }
 }

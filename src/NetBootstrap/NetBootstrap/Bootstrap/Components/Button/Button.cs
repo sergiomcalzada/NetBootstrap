@@ -16,6 +16,11 @@ namespace NetBootstrap.Bootstrap.Components.Button
             : base(context)
         {
             HtmlBuilder = new TagBuilder("Button");
+            HtmlBuilder.AddCssClass("btn");
+            this.Class = ButtonClass.Defatul;
+            this.Size = ButtonSize.Standar;
+            this.Text = string.Empty;
+            
         }
 
         #region Overrides of ViewComponentBase
@@ -25,41 +30,41 @@ namespace NetBootstrap.Bootstrap.Components.Button
             SetClass();
             SetSize();
             SetText();
+            SetEnabled();
             var htmlString = new HtmlString(HtmlBuilder.ToString());
             return htmlString;
         }
 
-        private void SetSize()
+        private void SetClass()
         {
             switch (this.Class)
             {
                 case ButtonClass.Defatul:
-                    HtmlBuilder.AddCssClass("btn");
                     break;
                 case ButtonClass.Primary:
-                    HtmlBuilder.AddCssClass("btn btn-primary");
+                    HtmlBuilder.AddCssClass("btn-primary");
                     break;
                 case ButtonClass.Info:
-                    HtmlBuilder.AddCssClass("btn btn-info");
+                    HtmlBuilder.AddCssClass("btn-info");
                     break;
                 case ButtonClass.Success:
-                    HtmlBuilder.AddCssClass("btn btn-success");
+                    HtmlBuilder.AddCssClass("btn-success");
                     break;
                 case ButtonClass.Warning:
-                    HtmlBuilder.AddCssClass("btn btn-warning");
+                    HtmlBuilder.AddCssClass("btn-warning");
                     break;
                 case ButtonClass.Danger:
-                    HtmlBuilder.AddCssClass("btn btn-danger");
+                    HtmlBuilder.AddCssClass("btn-danger");
                     break;
                 case ButtonClass.Inverse:
-                    HtmlBuilder.AddCssClass("btn btn-inverse");
+                    HtmlBuilder.AddCssClass("btn-inverse");
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
         }
 
-        private void SetClass()
+        private void SetSize()
         {
             switch (Size)
             {

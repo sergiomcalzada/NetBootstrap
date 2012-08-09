@@ -3,7 +3,7 @@
 
 
 <h2>Button</h2>
-<br>
+<br/>
 @Html.Bootstrap().Button().Name("1").ButtonType(ButtonClass.Defatul).Text("Default")
 @Html.Bootstrap().Button().Name("2").ButtonType(ButtonClass.Primary).Text("Primary")
 @Html.Bootstrap().Button().Name("3").ButtonType(ButtonClass.Info).Text("Info")
@@ -11,8 +11,12 @@
 @Html.Bootstrap().Button().Name("5").ButtonType(ButtonClass.Warning).Text("Warning")
 @Html.Bootstrap().Button().Name("6").ButtonType(ButtonClass.Danger).Text("Danger")
 @Html.Bootstrap().Button().Name("6").ButtonType(ButtonClass.Inverse).Text("Inverse")
-<br>
+<br/>
 @Html.Bootstrap().Button().Name("7").Size(ButtonSize.Standar).Text("Standar")
 @Html.Bootstrap().Button().Name("7").Size(ButtonSize.Large).Text("Large")
 @Html.Bootstrap().Button().Name("7").Size(ButtonSize.Small).Text("Small")
 @Html.Bootstrap().Button().Name("8").Size(ButtonSize.Mini).Text("Mini")
+<br/>
+@Html.Bootstrap().Button().Name("8").Active(true).Text("Active")
+@Html.Bootstrap().Button().Name("8").Enabled(false).Text("Disabled")
+@Html.Bootstrap().Button().Name("8").Enabled(false).Text("Active")

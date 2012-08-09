@@ -24,5 +24,17 @@ namespace NetBootstrap.Bootstrap.Components.Button
             Component.Text = text;
             return this;
         }
+        
+        public virtual ButtonBuilder Enabled(bool enabled)
+        {
+            Component.Enabled = false;
+            return this;
+        }
+
+        public virtual ButtonBuilder Active(bool active)
+        {
+            Component.Active = active;
+            return this;
+        }
     }
 }
