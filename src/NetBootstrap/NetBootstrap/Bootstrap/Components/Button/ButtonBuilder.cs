@@ -18,5 +18,11 @@ namespace NetBootstrap.Bootstrap.Components.Button
             Component.Size = size;
             return this;
         }
+
+        public virtual ButtonBuilder Text(string text)
+        {
+            Component.Text = text;
+            return this;
+        }
     }
 }
