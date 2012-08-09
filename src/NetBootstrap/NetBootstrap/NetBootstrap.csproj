@@ -49,11 +49,13 @@
     <Compile Include="Bootstrap\BootstrapBuilder.cs" />
     <Compile Include="Bootstrap\BootstrapComponent.cs" />
     <Compile Include="Bootstrap\BootstrapFactory.cs" />
+    <Compile Include="Bootstrap\Components\Button\Button.cs" />
+    <Compile Include="Bootstrap\Components\Button\ButtonBuilder.cs" />
+    <Compile Include="Bootstrap\Components\Button\HTMLButton.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\IHideObjectMembers.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Bootstrap\Components\Button\" />
     <Folder Include="Bootstrap\Components\Icon\" />
     <Folder Include="Bootstrap\Plugins\" />
     <Folder Include="Bootstrap\Scaffolding\" />
