@@ -27,13 +27,23 @@ namespace NetBootstrap.Bootstrap.Components.Button
 
         public override IHtmlString ToHtmlString()
         {
+            SetEnabled();
+
             SetClass();
             SetSize();
             SetText();
-            SetEnabled();
+            
             var htmlString = new HtmlString(HtmlBuilder.ToString());
             return htmlString;
         }
+
+
+        #endregion
+
+        public ButtonClass Class { get; set; }
+        public ButtonSize Size { get; set; }
+        public string Text { get; set; }
+
 
         private void SetClass()
         {
@@ -88,12 +98,5 @@ namespace NetBootstrap.Bootstrap.Components.Button
         {
             HtmlBuilder.InnerHtml = this.Text;
         }
-
-        #endregion
-
-        public ButtonClass Class { get; set; }
-        public ButtonSize Size { get; set; }
-        public string Text { get; set; }
-
     }
 }

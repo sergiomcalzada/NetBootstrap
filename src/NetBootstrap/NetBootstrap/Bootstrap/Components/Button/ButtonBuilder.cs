@@ -7,7 +7,7 @@ namespace NetBootstrap.Bootstrap.Components.Button
 {
     public class ButtonBuilder : BootstrapBuilder<Button, ButtonBuilder>
     {
-        public virtual ButtonBuilder ButtonType(ButtonClass buttonClass)
+        public virtual ButtonBuilder Class(ButtonClass buttonClass)
         {
             Component.Class = buttonClass;
             return this;

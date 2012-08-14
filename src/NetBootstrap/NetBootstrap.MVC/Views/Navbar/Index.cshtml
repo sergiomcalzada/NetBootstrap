@@ -1,0 +1,14 @@
+﻿@using NetBootstrap.Bootstrap
+@using NetBootstrap.Bootstrap.Components.Navbar
+
+
+<h2>Navbar</h2>
+
+@(Html.Bootstrap().Navbar().Name("navbar")
+                            .Items(items =>
+                                       {
+                                           items.AddBrand().Text("Brand");
+                                           items.AddForm().Placeholder("Buscar...");
+                                       }))
+
+
