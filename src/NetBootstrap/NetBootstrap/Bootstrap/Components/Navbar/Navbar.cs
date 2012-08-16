@@ -76,46 +76,7 @@ namespace NetBootstrap.Bootstrap.Components.Navbar
             _navContainer.InnerHtml = content.ToString();
         }
 
-        //private string GetItems()
-        //{
-        //    var nav = new TagBuilder("ul");
-        //    nav.AddCssClass("nav");
-
-        //    var navContent = new StringBuilder();
-        //    foreach (var item in this.Items)
-        //    {
-        //        var navItem = new TagBuilder("li");
-
-        //        if (item is NavbarLink)
-        //        {
-        //            if (item.Active)
-        //                navItem.AddCssClass("active");
-
-        //            var navLink = new TagBuilder("a");
-        //            navLink.MergeAttribute("href", "#");
-
-        //            navLink.InnerHtml = item.Text;
-        //            navItem.InnerHtml = navLink.ToString();
-
-        //        }
-        //        else if (item is NavbarDivider )
-        //        {
-        //            navItem.AddCssClass("divider-vertical");
-        //        }
-
-
-
-        //        navContent.AppendLine(navItem.ToString());
-        //    }
-
-        //    nav.InnerHtml = navContent.ToString();
-
-        //    var navCollapsed = new TagBuilder("div");
-        //    navCollapsed.AddCssClass("nav-collapse");
-        //    navCollapsed.InnerHtml = nav.ToString();
-
-        //    return navCollapsed.ToString();
-        //}
+      
     }
 
     public class NavbarItemFactory
@@ -134,9 +95,17 @@ namespace NetBootstrap.Bootstrap.Components.Navbar
             return builder;
         }
 
-        public NavbarLinkListBuilder AddLinks()
+        public NavbarLinkListBuilder AddLinks(Action<NavbarLinkListBuilder> links )
         {
-            var builder = new NavbarLinkListBuilder(new NavbarLinkList());
+            var builder = new NavbarLinkListBuilder(new NavbarLinkList(), new UrlHelper(this._component.ViewContext.RequestContext));
+            _component.Items.Add(builder);
+            links(builder);
+            return builder;
+        }
+
+        public NavbarSearchFormBuilder AddSearchForm()
+        {
+            var builder = new NavbarSearchFormBuilder(new NavbarSearchForm());
             _component.Items.Add(builder);
             return builder;
         }
@@ -150,211 +119,4 @@ namespace NetBootstrap.Bootstrap.Components.Navbar
 
     }
 
-
-
-    public class NavbarItem
-    {
-        public NavbarItemPull Pull { get; set; }
-    }
-
-    public interface INavbarItemBuilder : IHtmlString { }
-    public abstract class NavbarItemBuilder<TBuilder, TItem> : INavbarItemBuilder
-        where TBuilder : NavbarItemBuilder<TBuilder, TItem>
-        where TItem : NavbarItem
-    {
-        protected NavbarItemBuilder(TItem item)
-        {
-            this.Item = item;
-        }
-
-        public TItem Item { get; set; }
-
-        public virtual TBuilder Pull(NavbarItemPull pull)
-        {
-            Item.Pull = pull;
-            return (TBuilder)this;
-        }
-
-        #region Implementation of IHtmlString
-
-        public abstract string ToHtmlString();
-
-        #endregion
-    }
-
-
-    public class NavbarBrand : NavbarItem
-    {
-        public string Text { get; set; }
-    }
-    public class NavbarBrandBuilder : NavbarItemBuilder<NavbarBrandBuilder, NavbarBrand>
-    {
-        public NavbarBrandBuilder(NavbarBrand item)
-            : base(item)
-        {
-        }
-
-        public virtual NavbarBrandBuilder Text(string text)
-        {
-            Item.Text = text;
-            return this;
-        }
-
-        #region Overrides of NavbarItemBuilder<NavbarBrandBuilder,NavbarBrand>
-
-        public override string ToHtmlString()
-        {
-
-            var brand = new TagBuilder("a");
-            brand.AddCssClass("brand");
-            brand.MergeAttribute("href", "#");
-            brand.InnerHtml = this.Item.Text;
-
-            var nav = new TagBuilder("ul");
-            nav.AddCssClass("nav");
-            switch (this.Item.Pull)
-            {
-                case NavbarItemPull.None:
-                    break;
-                case NavbarItemPull.Left:
-                    nav.AddCssClass("pull-left");
-                    break;
-                case NavbarItemPull.Right:
-                    nav.AddCssClass("pull-right");
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
-
-            nav.InnerHtml = brand.ToString();
-            return nav.ToString();
-        }
-
-        #endregion
-    }
-
-    public class NavbarForm : NavbarItem
-    {
-        public string Placeholder { get; set; }
-    }
-    public class NavbarFormBuilder : NavbarItemBuilder<NavbarFormBuilder, NavbarForm>
-    {
-        public NavbarFormBuilder(NavbarForm item)
-            : base(item)
-        {
-        }
-
-        #region Overrides of NavbarItemBuilder<NavbarFormBuilder,NavbarForm>
-
-        public override string ToHtmlString()
-        {
-            var form = new TagBuilder("form");
-            form.AddCssClass("navbar-search");
-
-            var search = new TagBuilder("input");
-            search.AddCssClass("search-query");
-            search.MergeAttribute("type", "text");
-            search.MergeAttribute("placeholder", this.Item.Placeholder);
-
-            form.InnerHtml = search.ToString();
-
-
-            var nav = new TagBuilder("ul");
-            nav.AddCssClass("nav");
-            switch (this.Item.Pull)
-            {
-                case NavbarItemPull.None:
-                    break;
-                case NavbarItemPull.Left:
-                    nav.AddCssClass("pull-left");
-                    break;
-                case NavbarItemPull.Right:
-                    nav.AddCssClass("pull-right");
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
-
-            nav.InnerHtml = form.ToString();
-            return nav.ToString();
-        }
-
-        #endregion
-
-        public NavbarFormBuilder Placeholder(string placeholder)
-        {
-            this.Item.Placeholder = placeholder;
-            return this;
-        }
-    }
-
-    public class NavbarLinkList : NavbarItem { }
-    public class NavbarLinkListBuilder : NavbarItemBuilder<NavbarLinkListBuilder, NavbarLinkList>
-    {
-        public NavbarLinkListBuilder(NavbarLinkList item)
-            : base(item)
-        {
-            Items = new List<ILinkItem>();
-        }
-
-        #region Overrides of NavbarItemBuilder<NavbarLinkListBuilder,NavbarLinkList>
-
-        public override string ToHtmlString()
-        {
-            throw new NotImplementedException();
-        }
-
-        #endregion
-
-        public List<ILinkItem> Items { get; set; }
-    }
-
-    public interface INavbarLink : IHtmlString { }
-    public class NavbarLink : INavbarLink
-    {
-        public bool Active { get; set; }
-        public string Text { get; set; }
-
-        #region Implementation of IHtmlString
-
-        public string ToHtmlString()
-        {
-
-            var navItem = new TagBuilder("li");
-
-            if (this.Active)
-                navItem.AddCssClass("active");
-
-            var navLink = new TagBuilder("a");
-            navLink.MergeAttribute("href", "#");
-
-            navLink.InnerHtml = this.Text;
-            navItem.InnerHtml = navLink.ToString();
-
-            return navItem.ToString();
-        }
-
-        #endregion
-    }
-
-    public class NavbarDivider : INavbarLink
-    {
-        #region Implementation of IHtmlString
-
-        public string ToHtmlString()
-        {
-            var navItem = new TagBuilder("li");
-            navItem.AddCssClass("divider-vertical");
-            return navItem.ToString();
-        }
-
-        #endregion
-    }
-
-    public class NavbarLinkBuilder
-    {
-
-
-
-    }
 }

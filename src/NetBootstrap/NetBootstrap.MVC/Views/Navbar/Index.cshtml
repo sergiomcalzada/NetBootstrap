@@ -8,7 +8,22 @@
                             .Items(items =>
                                        {
                                            items.AddBrand().Text("Brand");
-                                           items.AddForm().Placeholder("Buscar...");
+                                           items.AddSearchForm().Placeholder("Buscar...");
+                                           items.AddForm().Content(
+                                                @<text>
+                                                <input type="text" class="span2">
+                                                </text>);
+                                           items.AddLinks(links =>
+                                                              {
+                                                                  links.AddLink().Text("link 1").Active(true);
+                                                                  links.AddLink().Text("link 2").Action("Index", "Navbar", null);
+                                                              });
+                                           items.AddLinks(links =>
+                                                              {
+                                                                  links.AddLink().Text("link 3");
+                                                                  links.AddDivider();
+                                                                  links.AddLink().Text("link 4");
+                                                              }).Pull(NavbarItemPull.Right);
                                        }))
 
 

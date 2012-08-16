@@ -52,9 +52,15 @@
     <Compile Include="Bootstrap\Components\Button\Button.cs" />
     <Compile Include="Bootstrap\Components\Button\ButtonBuilder.cs" />
     <Compile Include="Bootstrap\Components\Button\HTMLButton.cs" />
+    <Compile Include="Bootstrap\Components\Navbar\NavbarForm.cs" />
     <Compile Include="Bootstrap\Components\Navbar\HTMLNavbar.cs" />
     <Compile Include="Bootstrap\Components\Navbar\Navbar.cs" />
+    <Compile Include="Bootstrap\Components\Navbar\NavbarBrand.cs" />
     <Compile Include="Bootstrap\Components\Navbar\NavbarBuilder.cs" />
+    <Compile Include="Bootstrap\Components\Navbar\NavbarSearchForm.cs" />
+    <Compile Include="Bootstrap\Components\Navbar\NavbarItem.cs" />
+    <Compile Include="Bootstrap\Components\Navbar\NavbarItemBuilder.cs" />
+    <Compile Include="Bootstrap\Components\Navbar\NavbarLinkList.cs" />
     <Compile Include="Bootstrap\HtmlHelperExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\IHideObjectMembers.cs" />
