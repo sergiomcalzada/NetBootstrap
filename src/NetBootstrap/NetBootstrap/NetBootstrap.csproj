@@ -51,6 +51,10 @@
     <Compile Include="Bootstrap\BootstrapFactory.cs" />
     <Compile Include="Bootstrap\Components\Button\Button.cs" />
     <Compile Include="Bootstrap\Components\Button\ButtonBuilder.cs" />
+    <Compile Include="Bootstrap\Components\Button\ButtonGroup.cs" />
+    <Compile Include="Bootstrap\Components\Button\ButtonGroupBuilder.cs" />
+    <Compile Include="Bootstrap\Components\Button\ButtonToolbar.cs" />
+    <Compile Include="Bootstrap\Components\Button\ButtonToolbarBuilder.cs" />
     <Compile Include="Bootstrap\Components\Button\HTMLButton.cs" />
     <Compile Include="Bootstrap\Components\Navbar\NavbarForm.cs" />
     <Compile Include="Bootstrap\Components\Navbar\HTMLNavbar.cs" />

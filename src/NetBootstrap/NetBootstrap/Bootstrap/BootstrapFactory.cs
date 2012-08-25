@@ -22,5 +22,15 @@ namespace NetBootstrap.Bootstrap
         {
             return NavbarBuilder.Create(new Navbar(this.HtmlHelper.ViewContext));
         }
+
+        public ButtonGroupBuilder ButtonGroup()
+        {
+            return ButtonGroupBuilder.Create(new ButtonGroup(this.HtmlHelper.ViewContext));
+        }
+
+        public ButtonToolbarBuilder ButtonToolbar()
+        {
+            return ButtonToolbarBuilder.Create(new ButtonToolbar(this.HtmlHelper.ViewContext));
+        }
     }
 }

@@ -20,3 +20,32 @@
 @Html.Bootstrap().Button().Name("8").Active(true).Text("Active")
 @Html.Bootstrap().Button().Name("8").Enabled(false).Text("Disabled")
 @Html.Bootstrap().Button().Name("8").Enabled(false).Text("Active")
+<br/>
+@(Html.Bootstrap().ButtonGroup().AddButtons(buttons =>
+                                                   {
+                                                       buttons.AddButton().Text("1");
+                                                       buttons.AddButton().Text("2");
+                                                       buttons.AddButton().Text("3");
+                                                   })
+                                .AddButtons(buttons =>
+                                                   {
+                                                       buttons.AddButton().Text("4");
+                                                       buttons.AddButton().Text("5");
+                                                       buttons.AddButton().Text("6");
+                                                   }))
+<br/>
+@(Html.Bootstrap().ButtonToolbar().AddGruops(groups =>
+                                                      {
+                                                          groups.AddGroup().AddButtons(buttons =>
+                                                            {
+                                                                buttons.AddButton().Text("1");
+                                                                buttons.AddButton().Text("2");
+                                                                buttons.AddButton().Text("3");
+                                                            });
+                                                          groups.AddGroup().AddButtons(buttons =>
+                                                          {
+                                                              buttons.AddButton().Text("4");
+                                                              buttons.AddButton().Text("5");
+                                                              buttons.AddButton().Text("6");
+                                                          });
+                                                      }))                               
